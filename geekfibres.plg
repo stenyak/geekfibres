@@ -1,0 +1,83 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: geekfibres - Win32 Release--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "c:\windows\TEMP\RSPD135.TMP" with contents
+[
+/nologo /MD /W3 /GX /O2 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_MBCS" /Fp"Release/geekfibres.pch" /YX /Fo"Release/" /Fd"Release/" /FD /c 
+"C:\Archivos de programa\Microsoft Visual Studio\MyProjects\geekfibres\src\protagonista.cpp"
+"C:\Archivos de programa\Microsoft Visual Studio\MyProjects\geekfibres\src\avance.cpp"
+"C:\Archivos de programa\Microsoft Visual Studio\MyProjects\geekfibres\src\boundingbox.cpp"
+"C:\Archivos de programa\Microsoft Visual Studio\MyProjects\geekfibres\src\disparo.cpp"
+"C:\Archivos de programa\Microsoft Visual Studio\MyProjects\geekfibres\src\editor.cpp"
+"C:\Archivos de programa\Microsoft Visual Studio\MyProjects\geekfibres\src\juego.cpp"
+"C:\Archivos de programa\Microsoft Visual Studio\MyProjects\geekfibres\src\listaimagenes.cpp"
+"C:\Archivos de programa\Microsoft Visual Studio\MyProjects\geekfibres\src\main.cpp"
+"C:\Archivos de programa\Microsoft Visual Studio\MyProjects\geekfibres\src\malo.cpp"
+"C:\Archivos de programa\Microsoft Visual Studio\MyProjects\geekfibres\src\motorfisico.cpp"
+"C:\Archivos de programa\Microsoft Visual Studio\MyProjects\geekfibres\src\mundo.cpp"
+"C:\Archivos de programa\Microsoft Visual Studio\MyProjects\geekfibres\src\personaje.cpp"
+"C:\Archivos de programa\Microsoft Visual Studio\MyProjects\geekfibres\src\animacion.cpp"
+"C:\Archivos de programa\Microsoft Visual Studio\MyProjects\geekfibres\src\sonido.cpp"
+"C:\Archivos de programa\Microsoft Visual Studio\MyProjects\geekfibres\src\tile.cpp"
+]
+Creating command line "cl.exe @c:\windows\TEMP\RSPD135.TMP" 
+Creating temporary file "c:\windows\TEMP\RSPD136.TMP" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:windows /incremental:no /pdb:"Release/geekfibres.pdb" /machine:I386 /out:"geekfibres.exe" 
+".\Release\protagonista.obj"
+".\Release\avance.obj"
+".\Release\boundingbox.obj"
+".\Release\disparo.obj"
+".\Release\editor.obj"
+".\Release\juego.obj"
+".\Release\listaimagenes.obj"
+".\Release\main.obj"
+".\Release\malo.obj"
+".\Release\motorfisico.obj"
+".\Release\mundo.obj"
+".\Release\personaje.obj"
+".\Release\animacion.obj"
+".\Release\sonido.obj"
+".\Release\tile.obj"
+"..\..\..\..\Lib_sdl\sdl\lib\SDL.lib"
+"..\..\..\..\Lib_sdl\sdl\lib\SDLmain.lib"
+"..\..\..\..\Lib_sdl\SDL_mixer-1.2.5\lib\SDL_mixer.lib"
+"..\..\..\..\Lib_sdl\SDL_ttf-2.0.6\lib\SDL_ttf.lib"
+]
+Creating command line "link.exe @c:\windows\TEMP\RSPD136.TMP"
+<h3>Output Window</h3>
+Compiling...
+protagonista.cpp
+avance.cpp
+C:\Archivos de programa\Microsoft Visual Studio\MyProjects\geekfibres\src\avance.cpp(14) : warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+C:\Archivos de programa\Microsoft Visual Studio\MyProjects\geekfibres\src\avance.cpp(14) : warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+boundingbox.cpp
+disparo.cpp
+editor.cpp
+juego.cpp
+listaimagenes.cpp
+main.cpp
+malo.cpp
+motorfisico.cpp
+C:\Archivos de programa\Microsoft Visual Studio\MyProjects\geekfibres\src\motorfisico.cpp(233) : warning C4390: ';' : empty controlled statement found; is this the intent?
+C:\Archivos de programa\Microsoft Visual Studio\MyProjects\geekfibres\src\motorfisico.cpp(280) : warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+C:\Archivos de programa\Microsoft Visual Studio\MyProjects\geekfibres\src\motorfisico.cpp(376) : warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+mundo.cpp
+personaje.cpp
+animacion.cpp
+sonido.cpp
+tile.cpp
+Linking...
+
+
+
+<h3>Results</h3>
+geekfibres.exe - 0 error(s), 5 warning(s)
+</pre>
+</body>
+</html>

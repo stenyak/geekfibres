@@ -1,0 +1,56 @@
+Cambiar todas las ocurrenias de "gamedata" en el codigo fuente hacia algo que sea
+facilmente modificable, para asi poder cambiar el directorio de datos en funcion de
+la plataforma. DONE
+
+Cambiar tambien la direccion del config.cfg en funcion de la plataforma. DONE
+
+Modificar el editor de mapas para que aparezca una paleta con todos los tipos de
+tiles que se pueden utilizar, y poder elegir entre ellos. DONE
+
+A√±adirbotones para scrolling en la tiles palette, y un indicador de 
+"currently selected tile". Partially DONE
+
+Arreglar el bucle principal en juego y editor para que no gaste tanta cpu estupidamente en 
+el usleep. DONE
+
+Hacer que se pueda activar la musica en cualquier momento (añadir código para cambiar mustPlayMusic en la gestión de eventos de juego.cpp). DONE
+
+Check why the hell does SDL_Flip call so many times to SDL_AddTimer
+
+Mover el código de gestión de eventos hasta la zona correspondiente.
+Por ejemplo, la gestión de eventos del prota debería estar en prota.cpp, y no en juego.cpp. Esto debería disminuir el acoplamiento, y probablemente así se podrian eliminar bastantes funciones en Prota que solo sirven para comunicarse con el código de gestión de eventos.
+||
+Esto sin embargo presenta problemas puesto que resulta mas dificil debuggear esto al poder los diferentes módulos del programa interferirse entre si a la hora de manejar los eventos :S
+
+Para poder anyadir enemigos en el editor de mapas... usar dummy tiles? (tiles con
+una imagen que indique que eso es un monstruo, pero que no sean tiles reales de los
+que se pueden usar en el juego. Se podria incluso anyadir una imagen para tile en la
+configuracion de los characters.
+
+Cambiar toda la clase Malo para que cargue las "actions" de un archivo de 
+configuracion, y las use en su IA a la hora de moverse por el mundo.
+
+A√±adir integraci√≥n con libsdl-sge para rotar y flippear imagenes
+
+Hacer que la direccion en la que salen los disparos funcione igual que en el metal
+slug, que conforme ibas pulsando la tecla "arriba", los disparos iban tomando una 
+direccion mas vertical, y cuando dejabas de pulsarla, iban volviendo hasta la 
+direccion horizontal.
+
+Modificar el algoritmo de colisiones de los disparos, para que use el tunnel-free 
+algorithm
+
+El algoritmo de detecci√≥n de colisiones detecta varias colisiones (numero a
+parentemente aleatorio) contra el mismo tile cuando el prota salta y choca con la 
+cabeza. Eso destroza el tema de romper los bloques a cabezazos.
+
+Los disparos del protagonista salen con un offset de distancia extranyo, que habria 
+que solucionar con el archivo de configuracion del prota.
+
+Hacer que la anchura y altura de los mundos pueda ser variable, para asi poder poner 
+mundos mucho mas grandes o peque√±os, dependiendo de las necesidades del momento
+
+Modificar el constructor de los disparos para especificar un factor de dispersion 
+horizontal y vertical (para poder lanzar disparos como paredes, y disparos en plan 
+rafaga directa, por ejemplo)
+
