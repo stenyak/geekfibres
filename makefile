@@ -27,7 +27,7 @@ TARGET := geekfibres$(EXE_EXT)
 LD := g++
 CC := gcc
 CXX := g++
-CFLAGS := -c -Wall -g -O3
+CFLAGS := -c -Wall -g -O0 -march=i686
 CXXFLAGS := $(CFLAGS)
 
 #Definicion de rutas a cabeceras y librerias
