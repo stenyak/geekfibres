@@ -1,4 +1,5 @@
 #include "musicsystem.h"
+#include <stdlib.h>
 
 Mix_Music * MusicSystem::music; 
 int MusicSystem::channel;

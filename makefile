@@ -15,27 +15,29 @@ ifeq ($(UNAME), Linux)
 PLATFOM := LINUX
 TYPE :=
 EXE_EXT := 
-BASE_INCLUDE_DIR := /usr/include
-BASE_LIBRARY_DIR := /usr/lib
-LD_FLAGS:= 
+BASE_INCLUDE_DIR=/usr/include
+BASE_LIBRARY_DIR=/usr/lib
+LD_FLAGS:= -stdlib=libc++ -DUSE_LIBCXX
 LIBRARIES_LINUX := .
 endif
-
 
 #Opciones del compilador
 DEFINES := $(PLATFORM) $(TYPE)
 TARGET := geekfibres$(EXE_EXT)
-LD := g++
-CC := gcc
-CXX := g++
-CFLAGS := -c -Wall -g -O3
+LD := clang++
+CC := clang++
+CXX := clang++
+#LD := python ../emscripten/emcc
+#CC := python ../emscripten/emcc
+#CXX := python ../emscripten/emcc
+CFLAGS := -c -Wall -g #-stdlib=libc++ -DUSE_LIBCXX
 CXXFLAGS := $(CFLAGS)
 
 #Definicion de rutas a cabeceras y librerias
 INCLUDE_DIRS := \
     . \
     src \
-    $(BASE_INCLUDE_DIR)/SDL \
+    $(BASE_INCLUDE_DIR)/SDL2 \
     $(BASE_INCLUDE_DIR) \
 
 LIBRARIES := \
@@ -105,7 +107,7 @@ tags:
 	ctags --c-types=+px **/*.[ch]pp
 
 $(TARGET) :$(OBJECTS)
-	$(LD) $(LD_FLAGS) $(patsubst %,-L%,$(LIBRARY_DIRS)) -o $@ $^ $(patsubst %,-l%,$(LIBRARIES)) 
+	$(LD) -nodefaultlibs -lstdc++ -lc++ -lcxxrt -lm -lc $(LD_FLAGS) $(patsubst %,-L%,$(LIBRARY_DIRS)) -o $@ $^ $(patsubst %,-l%,$(LIBRARIES)) 
 	@chmod +x $@
 	@echo    "----------------------------------------------"
 	@echo -n "Compilado satisfactoriamente!: "

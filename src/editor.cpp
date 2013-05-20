@@ -102,7 +102,7 @@ void GestionarEventosEditor ( int &posCursorX, int &posCursorY,
 	static int mousePosX, mousePosY, lastMousePosX, lastMousePosY;
 	Uint8 buttonsState = SDL_GetMouseState(&mousePosX, &mousePosY);
 
-	Uint8 *teclasPulsadas = SDL_GetKeyState ( NULL );
+	Uint8 *teclasPulsadas = SDL_GetKeyboardState ( NULL );
 
 	while ( SDL_PollEvent ( ev ) )
 	{

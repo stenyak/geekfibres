@@ -12,13 +12,20 @@ int main (int argc, char **argv)
     int accionARealizar;        //0:juego,1:cargar,2:salir
     int pantallaActual = 0;
     int retornoJuego;
+    printf("starting shit");
 
     ConfigManager::LoadConfigFile("config.cfg");
 
-    InicializarSDL (  );
+    if (! InicializarSDL())
+    {
+        printf("\nfuck this shit, i'm out");
+        return 0;
+    }
+    printf("\nall is ok man");
     CharacterBuilder::LoadCharacterTypes();
     LevelData::LoadLevels();
     TileBuilder::LoadTileTypes();
+    printf("weeee i'm a loop!");
 
     while ( ( accionARealizar = Menu (  ) ) != EXIT )
     {
@@ -58,6 +65,7 @@ int main (int argc, char **argv)
             break;
         }
     }
+    printf("out of loop :-(");
 
     SDL_Quit (  );
     return 0;
@@ -114,15 +122,17 @@ bool InicializarSDL (  )
     {
         printf ( "No se pudo abrir el sistema de sonido!\n" );
     }
-    Mix_QuerySpec ( &audioRate, &audioFormat, &audioChannels );
+    //Mix_QuerySpec ( &audioRate, &audioFormat, &audioChannels );
+    printf("\nwhataer\n");
+    //return false;
 
     // Inicializamos las fuentes de letras
     if ( TTF_Init (  ) == -1 )
     {
         printf( "No se pudo inicializar el sistema de fuentes de letras TTF\n" );
-        exit ( 2 );
+        return false;
     }
-    return 1;
+    return true;
 }
 
 /***************************************************************\

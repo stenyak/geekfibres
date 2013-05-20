@@ -1,4 +1,5 @@
 #include "sonido.h"
+#include <stdio.h>
 Sonido::Sonido(const char * nombreFichero)
 {
 	sonido= Mix_LoadWAV(nombreFichero);
