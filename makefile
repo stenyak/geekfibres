@@ -1,3 +1,4 @@
+UNAME := $(shell uname)
 #Opciones OS-specific
 ifeq ("$(OS)", "Windows_NT")
 
@@ -10,7 +11,7 @@ LD_FLAGS:= -mno-cygwin -mwindows
 LIBRARIES_WIN32 := mingw32
 endif
 
-ifeq ("$(OSTYPE)", "linux-gnu")
+ifeq ($(UNAME), Linux)
 PLATFOM := LINUX
 TYPE :=
 EXE_EXT := 
