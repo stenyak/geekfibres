@@ -108,7 +108,7 @@ $(TARGET) :$(OBJECTS)
 	$(LD) $(LD_FLAGS) $(patsubst %,-L%,$(LIBRARY_DIRS)) -o $@ $^ $(patsubst %,-l%,$(LIBRARIES)) 
 	@chmod +x $@
 	@echo    "----------------------------------------------"
-	@echo -n "Geekfibres compilado satisfactoriamente!: "
-	@ls -Falh $(TARGET) |cut -c 39-42
+	@echo -n "Compilado satisfactoriamente!: "
+	@du -sh $@ |sed "s/\ .*//g"
 	@echo    "----------------------------------------------"
 
