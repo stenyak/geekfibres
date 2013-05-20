@@ -112,3 +112,9 @@ $(TARGET) :$(OBJECTS)
 	@du -sh $@ |sed "s/\ .*//g"
 	@echo    "----------------------------------------------"
 
+$(TARGET).html: $(SOURCES)
+	@python ../emscripten/emcc -Wno-deprecated-writable-strings -Wall -I. -Isrc $^ -o $@ -lSDL -lSDLmain -lSDL_mixer -lSDL_ttf -lSDL_image -stdlib=libc++ -DUSE_LIBCXX
+	@echo    "----------------------------------------------"
+	@echo -n "Compilado satisfactoriamente!: "
+	@du -sh $@ |sed "s/\ .*//g"
+	@echo    "----------------------------------------------"
